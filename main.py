@@ -47,8 +47,8 @@ def unit_artdef(folder, config):
     artdef_total['UNIT_SCOUT'] = [i for i in not_uniques if 'SCOUT' in i['m_Name']['@text']][0]
     artdef_total['UNIT_WARRIOR'] = [i for i in not_uniques if 'WARRIOR' in i['m_Name']['@text']][0]
     artdef_template = read_xml('Units_template.artdef')
-    artdef_template['AssetObjects']['m_RootCollections']['Element']['Element'] = []
-    root = artdef_template['AssetObjects']['m_RootCollections']['Element']['Element']
+    artdef_template['AssetObjects..ArtDefSet']['m_RootCollections']['Element']['Element'] = []
+    root = artdef_template['AssetObjects..ArtDefSet']['m_RootCollections']['Element']['Element']
 
     failed = {'multsearch': [], 'nosearch': []}
     search_found = []
@@ -79,7 +79,6 @@ def unit_artdef(folder, config):
     root = dict_to_xml(artdef_template)
     xml_string = xml_to_string(root)
     pretty_xml_string = pretty_print_xml(xml_string)
-    pretty_xml_string = pretty_xml_string.replace('AssetObjects', 'AssetObjects::ArtDefSet')
     save_pretty_xml_to_file(pretty_xml_string, artdef_name)
 
     print(f'Saved unit mapping to {artdef_name}. Import it into modbuddy and you should be able to build with it.')
