@@ -9,6 +9,13 @@ I signified there.
 You will also need to specify your new units name, and what unit it should copy in the same file.
 Under units_specified is a list where you can set what your new unit on the left should be assigned to the civ unit on the right.
 
+To actually run the script, run run.bat on windows, or run.sh on mac or linux. For the latter, you will also need to run:
+
+>>>chmod +x run_main.sh
+
+in your terminal, in the project directory.
+
+
 You can also have a look at the full list of units available to make your unit look like by setting "show_all_possible_units" to True.
 
 Once the script has run, you should have a new file called Units.artdef. You can then import that into your modbuddy project to build
